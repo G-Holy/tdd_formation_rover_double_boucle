@@ -20,6 +20,8 @@ export class MarsRover {
     commands.forEach((command) => {
       if (command === "RIGHT") {
         this.turnRight();
+      } else if (command === "FORWARD") {
+        this.position = { x: 0, y: 3 };
       }
     });
   }

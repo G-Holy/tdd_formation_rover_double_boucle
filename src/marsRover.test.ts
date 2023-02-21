@@ -48,10 +48,10 @@ describe("Mars Rover", () => {
     test("Should start (0,4) NORTH and be (0,3) NORTH given [FORWARD]", () => {
       const rover = new MarsRover({ x: 0, y: 4 }, "NORTH");
 
-      rover.executeCommands(["RIGHT", "RIGHT"]);
+      rover.executeCommands(["FORWARD"]);
 
       expect(rover.position).toStrictEqual({ x: 0, y: 3 });
-      expect(rover.orientation).toBe("SOUTH");
+      expect(rover.orientation).toBe("NORTH");
     });
   });
 });
