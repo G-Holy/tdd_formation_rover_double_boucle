@@ -4,10 +4,10 @@ describe("Mars Rover", () => {
   test("Given a rover at (4,0) NORTH when it executes commands [FORWARD, FORWARD, FORWARD, RIGHT, RIGHT] then it should be (1,0) NORTH", () => {
     const rover = new MarsRover({ x: 0, y: 4 }, "NORTH");
 
-    rover.executeCommands(["FORWARD", "FORWARD", "RIGHT", "RIGHT"]);
+    rover.executeCommands(["FORWARD", "FORWARD", "FORWARD", "RIGHT", "RIGHT"]);
 
     expect(rover.position).toStrictEqual({ x: 0, y: 1 });
-    expect(rover.orientation).toBe("NORTH");
+    expect(rover.orientation).toBe("SOUTH");
   });
 
   describe("Mars rover exploration north without obstacle", () => {
