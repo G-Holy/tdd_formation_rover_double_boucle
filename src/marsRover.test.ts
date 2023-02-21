@@ -53,5 +53,14 @@ describe("Mars Rover", () => {
       expect(rover.position).toStrictEqual({ x: 0, y: 3 });
       expect(rover.orientation).toBe("NORTH");
     });
+
+    test("Should start (0,3) NORTH and be (0,2) NORTH given [FORWARD]", () => {
+      const rover = new MarsRover({ x: 0, y: 4 }, "NORTH");
+
+      rover.executeCommands(["FORWARD"]);
+
+      expect(rover.position).toStrictEqual({ x: 0, y: 2 });
+      expect(rover.orientation).toBe("NORTH");
+    });
   });
 });
