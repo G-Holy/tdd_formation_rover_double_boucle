@@ -9,3 +9,14 @@
 // démarre en en 0/1 orientation sud : A / A / A : obstacle en 1/2 il est censé avancer une fois et rester sur place
 // démarre en 2/4 orientation West G / A / D / A /A / D / A / G
 // a la fin de la séquence d'instruction il retourne sa position / orientation // si il a rencontré un obstacle (il est pas a sa position attendue)
+
+export class MarsRover {
+  constructor(
+    public position: { x: number; y: number },
+    public orientation: "NORTH" | "EAST" | "SOUTH" | "WEST"
+  ) {}
+
+  public executeCommands(commands: string[]) {
+    return;
+  }
+}
