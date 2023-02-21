@@ -35,5 +35,14 @@ describe("Mars Rover", () => {
       expect(rover.position).toStrictEqual({ x: 0, y: 4 });
       expect(rover.orientation).toBe("SOUTH");
     });
+
+    test("Should start (0,4) NORTH and be (0,4) SOUTH given [RIGHT, RIGHT]", () => {
+      const rover = new MarsRover({ x: 0, y: 4 }, "NORTH");
+
+      rover.executeCommands(["RIGHT", "RIGHT"]);
+
+      expect(rover.position).toStrictEqual({ x: 0, y: 4 });
+      expect(rover.orientation).toBe("SOUTH");
+    });
   });
 });

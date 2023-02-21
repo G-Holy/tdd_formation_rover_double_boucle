@@ -17,9 +17,17 @@ export class MarsRover {
   ) {}
 
   public executeCommands(commands: ("RIGHT" | "FORWARD")[]) {
-    if (commands[0] === "RIGHT" && this.orientation === "NORTH") {
+    commands.forEach((command) => {
+      if (command === "RIGHT") {
+        this.turnRight();
+      }
+    });
+  }
+
+  private turnRight() {
+    if (this.orientation === "NORTH") {
       this.orientation = "EAST";
-    } else if (commands[0] === "RIGHT" && this.orientation === "EAST") {
+    } else if (this.orientation === "EAST") {
       this.orientation = "SOUTH";
     }
   }
