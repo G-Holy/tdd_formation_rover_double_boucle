@@ -21,7 +21,7 @@ export class MarsRover {
       if (command === "RIGHT") {
         this.turnRight();
       } else if (command === "FORWARD") {
-        this.position = { x: 0, y: 3 };
+        this.position.y -= 1;
       }
     });
   }

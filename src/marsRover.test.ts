@@ -55,7 +55,7 @@ describe("Mars Rover", () => {
     });
 
     test("Should start (0,3) NORTH and be (0,2) NORTH given [FORWARD]", () => {
-      const rover = new MarsRover({ x: 0, y: 4 }, "NORTH");
+      const rover = new MarsRover({ x: 0, y: 3 }, "NORTH");
 
       rover.executeCommands(["FORWARD"]);
 
