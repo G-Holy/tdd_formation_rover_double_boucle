@@ -10,13 +10,17 @@
 // démarre en 2/4 orientation West G / A / D / A /A / D / A / G
 // a la fin de la séquence d'instruction il retourne sa position / orientation // si il a rencontré un obstacle (il est pas a sa position attendue)
 
+export type ObstacleEncountered = boolean;
+
 export class MarsRover {
   constructor(
     public position: { x: number; y: number },
     public orientation: "NORTH" | "EAST" | "SOUTH" | "WEST"
   ) {}
 
-  public executeCommands(commands: ("RIGHT" | "FORWARD")[]) {
+  public executeCommands(
+    commands: ("RIGHT" | "FORWARD")[]
+  ): ObstacleEncountered {
     commands.forEach((command) => {
       if (command === "RIGHT") {
         this.turnRight();
@@ -24,6 +28,7 @@ export class MarsRover {
         this.position.y -= 1;
       }
     });
+    return false;
   }
 
   private turnRight() {
